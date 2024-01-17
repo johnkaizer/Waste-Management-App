@@ -196,3 +196,5 @@ Q.idea/sonarlint/securityhotspotstore/9/3/934d323840827ebec2df7c8d358f90dbc8ceaa
 Q.idea/sonarlint/securityhotspotstore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0,b\b\bbf202272a96de5cd6b6828ffdc55fb3ce45289c
 Å
 Q.idea/sonarlint/securityhotspotstore/9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9,8\3\8363137acd658af1ae43ae51d794bf293d58aa7c
+k
+;app/src/main/java/com/galaxiescoders/wastetracker/User.java,f\8\f82f654825b211bcae517b627c065b753a374835
