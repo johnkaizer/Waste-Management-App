@@ -8,4 +8,38 @@
         <item>Resident</item>
         <item>Steward</item>
     </string-array>
+    <string-array name="Constituency">
+        <item>WestLands</item>
+        <item>Langata</item>
+        <item>Kibra</item>
+        <item>Roysambu</item>
+        <item>Kasarani</item>
+        <item>Starehe</item>
+        <item>Mathare</item>
+        <item>Embakasi West</item>
+    </string-array>
+    <string-array name="WestLands">
+        <item>Kitisuri</item> <item>Parklands</item> <item>Kangemi</item> <item>Mountain View</item>
+    </string-array>
+    <string-array name="Langata">
+        <item>Karen</item> <item>Nairobi West</item> <item>Karura</item> <item>South C</item>
+    </string-array>
+    <string-array name="Kibra">
+        <item>Laini Saba</item> <item>Lindi</item> <item>Woodley</item> <item> Sarangombe</item>
+    </string-array>
+    <string-array name="Roysambu">
+        <item>Githurai</item> <item>Kahawa West</item> <item>Zimmerman</item> <item>Roysambu</item>
+    </string-array>
+    <string-array name="Kasarani">
+        <item>Clay City</item> <item>Mwiki</item> <item>Kasarani</item> <item>Njiru</item><item>Ruai</item>
+    </string-array>
+    <string-array name="Starehe">
+        <item>Nairobi Central</item> <item>Ngara</item> <item>Pangani</item> <item>Ziwani/Kariokor</item>
+    </string-array>
+    <string-array name="Mathare">
+        <item>Hospital</item> <item>Mabatini</item> <item>Huruma</item> <item>Kiamaiko</item>
+    </string-array>
+    <string-array name="EmbakasiWest">
+        <item>Umoja 1</item> <item>Umoja 2</item> <item>Kariobangi South</item>
+    </string-array>
 </resources>
