@@ -22,4 +22,9 @@
         android:name="com.galaxiescoders.wastetracker.ui.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_home_users"
+        android:name="com.galaxiescoders.wastetracker.ui.UsersHomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_users_home" />
 </navigation>

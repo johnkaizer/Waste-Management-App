@@ -2,8 +2,6 @@ package com.galaxiescoders.wastetracker.models;
 
 public class User {
     public String fullName, email, phone, password,idNo,role;
-    public boolean additionalInfoRegistered; // Flag indicating if additional information is registered
-
     public User() {
     }
 
@@ -14,7 +12,6 @@ public class User {
         this.password = password;
         this.role = role;
         this.idNo = idNo;
-        this.additionalInfoRegistered = false; // Initialize the flag to false
     }
 
     public String getFullName() {
@@ -65,11 +62,4 @@ public class User {
         this.idNo = idNo;
     }
 
-    public boolean isAdditionalInfoRegistered() {
-        return additionalInfoRegistered;
-    }
-
-    public void setAdditionalInfoRegistered(boolean additionalInfoRegistered) {
-        this.additionalInfoRegistered = additionalInfoRegistered;
-    }
 }

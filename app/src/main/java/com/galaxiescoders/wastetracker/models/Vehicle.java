@@ -7,18 +7,20 @@ public class Vehicle {
     String YOS;
     String YOM;
     String Model;
+    String status;
     String staffId;
 
     public Vehicle() {
     }
 
-    public Vehicle(String imageUrl, String regNum, String engineNum, String YOS, String YOM, String model, String staffId) {
+    public Vehicle(String imageUrl, String regNum, String engineNum, String YOS, String YOM, String model, String status, String staffId) {
         ImageUrl = imageUrl;
         this.regNum = regNum;
         this.engineNum = engineNum;
         this.YOS = YOS;
         this.YOM = YOM;
         Model = model;
+        this.status = status;
         this.staffId = staffId;
     }
 
@@ -76,5 +78,13 @@ public class Vehicle {
 
     public void setStaffId(String staffId) {
         this.staffId = staffId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

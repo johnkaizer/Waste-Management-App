@@ -1,5 +1,47 @@
 
 J
-java:S1604"(Make this anonymous inner class a lambda(åÒˆùÿÿÿÿ8µÓÕ¹Ñ1
+java:S1604J"(Make this anonymous inner class a lambda(åÒˆùÿÿÿÿ8—Òœ¥Ó1
+K
+java:S1604’"(Make this anonymous inner class a lambda(½òÎ–úÿÿÿÿ8˜Òœ¥Ó1
+J
+java:S1604S"(Make this anonymous inner class a lambda(šïĞ½ùÿÿÿÿ8™Òœ¥Ó1
+f
+java:S16594"JDeclare "editTextEmail" and all following declarations on a separate line.(¯°¢a8úÒœ¥Ó1
 x
-java:S1450"VRemove the "binding" field and declare it as a local variable in the relevant methods.(¤Ï¨–ıÿÿÿÿ8øÓÕ¹Ñ1
+java:S14501"VRemove the "binding" field and declare it as a local variable in the relevant methods.(¤Ï¨–ıÿÿÿÿ8üÒœ¥Ó1
+t
+java:S37768"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(¨Œşÿÿÿÿ8ˆÓœ¥Ó1
+Q
+java:S1874·"3Remove this use of "NetworkInfo"; it is deprecated.(ÿ»¶Ã8´úˆÓ1
+Z
+java:S1874·"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(ÿ»¶Ã8¸Óœ¥Ó1
+V
+java:S1874¸"3Remove this use of "isConnected"; it is deprecated.(•İºŠùÿÿÿÿ8¹Óœ¥Ó1
+;
+java:S1128"Remove this duplicated import.(©Ê‰è8¶úˆÓ1
+:
+java:S1128"Remove this duplicated import.(³ğ‹G8¶úˆÓ1
+9
+java:S1128"Remove this duplicated import.(ŒñK8¶úˆÓ1
+@
+java:S1128"Remove this duplicated import.(«¸”ıøÿÿÿÿ8¶úˆÓ1
+@
+java:S1128"Remove this duplicated import.(°şÊóøÿÿÿÿ8·úˆÓ1
+;
+java:S1128"Remove this duplicated import.(Á¢Èş8·úˆÓ1
+@
+java:S1128"Remove this duplicated import.(Ø½­äşÿÿÿÿ8·úˆÓ1
+@
+java:S1128"Remove this duplicated import.( €ŠÑÿÿÿÿÿ8·úˆÓ1
+;
+java:S1128 "Remove this duplicated import.(†Å›Ú8·úˆÓ1
+@
+java:S1128!"Remove this duplicated import.(³ñÿŸùÿÿÿÿ8·úˆÓ1
+@
+java:S1128""Remove this duplicated import.(¸£ÃØüÿÿÿÿ8·úˆÓ1
+@
+java:S1128#"Remove this duplicated import.(©›ïÍúÿÿÿÿ8·úˆÓ1
+;
+java:S1128&"Remove this duplicated import.(€¶£î8·úˆÓ1
+@
+java:S1128+"Remove this duplicated import.(İÄğöûÿÿÿÿ8·úˆÓ1

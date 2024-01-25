@@ -11,7 +11,5 @@ r
 java:S1104"PMake idNo a static final constant or non-public and provide accessors if needed.(ÃÈ¾èüÿÿÿÿ8ÏŸ¿äÑ1
 r
 java:S1104"PMake role a static final constant or non-public and provide accessors if needed.(ÃÈ¾èüÿÿÿÿ8üëÅÑ1
-
-java:S1104"dMake additionalInfoRegistered a static final constant or non-public and provide accessors if needed.(Ê§£ó8µ¥¾äÑ1
 d
 java:S1659"BDeclare "email" and all following declarations on a separate line.(ÃÈ¾èüÿÿÿÿ8–üëÅÑ1

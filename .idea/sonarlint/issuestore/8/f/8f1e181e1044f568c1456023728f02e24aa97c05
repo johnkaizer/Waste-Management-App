@@ -1,9 +1,10 @@
 
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º°¥Ôÿÿÿÿÿ8ÜïäÑ1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º°¥Ôÿÿÿÿÿ8İïäÑ1
-l	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•à58áğäÑ1
-l	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾©Z8áğäÑ1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æĞ¦„8áğäÑ1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æĞ¦„8áğäÑ1
+l	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•à58ÆÔ1
+l	java:S117?"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾©Z8ÆÔ1
 t	java:S116"SRename this field "ImageUrl" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅèÏ¿ÿÿÿÿÿ8²ëëäÑ1
 j	java:S116"NRename this field "YOS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€éİ°8³ëëäÑ1
 o	java:S116"NRename this field "YOM" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ½ôÙıÿÿÿÿ8³ëëäÑ1
 q	java:S116	"PRename this field "Model" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®•÷‘ıÿÿÿÿ8³ëëäÑ1
+]	java:S107"AConstructor has 8 parameters, which is greater than 7 authorized.(æĞ¦„8ÔÔ1
