@@ -1,4 +1,4 @@
-package com.galaxiescoders.wastetracker.my_activities;
+package com.galaxiescoders.wastetracker.ui;
 
 import android.os.Bundle;
 

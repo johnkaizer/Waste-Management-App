@@ -27,4 +27,14 @@
         android:name="com.galaxiescoders.wastetracker.ui.UsersHomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_users_home" />
+    <fragment
+        android:id="@+id/admin_tools"
+        android:name="com.galaxiescoders.wastetracker.ui.AdminToolsFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_users_home" />
+    <fragment
+        android:id="@+id/admin_zones"
+        android:name="com.galaxiescoders.wastetracker.ui.ZonesAdminFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_users_home" />
 </navigation>
