@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.galaxiescoders.wastetracker.ui.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="Manage Users"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
@@ -28,13 +28,13 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_users_home" />
     <fragment
-        android:id="@+id/admin_tools"
+        android:id="@+id/navigation_tools"
         android:name="com.galaxiescoders.wastetracker.ui.AdminToolsFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_users_home" />
+        android:label="Manage Vehicles"
+        tools:layout="@layout/fragment_admin_tools" />
     <fragment
         android:id="@+id/admin_zones"
         android:name="com.galaxiescoders.wastetracker.ui.ZonesAdminFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_users_home" />
+        android:label="Manage Zones"
+        tools:layout="@layout/fragment_zones_admin" />
 </navigation>
