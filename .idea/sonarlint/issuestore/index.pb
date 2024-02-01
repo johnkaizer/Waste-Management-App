@@ -814,3 +814,7 @@ Q.idea/sonarlint/securityhotspotstore/0/4/04af0e77cb5c6b762c6f77a5901dcd982d8fd1
 Q.idea/sonarlint/securityhotspotstore/9/a/9a7627992f1b18d03326af5df40d42c51c6f28f3,1\3\1355ebe66e69c533564cf4df0117c980d69a3719
 Å
 Q.idea/sonarlint/securityhotspotstore/5/c/5c6b9b8ed1fecf6106ee1f8ad96b7acf71b0465b,e\f\efe8d54b2a23fb8de8d94cf70879833bca5f6296
+Å
+Qapp/src/main/java/com/galaxiescoders/wastetracker/adapters/AdminZonesAdapter.java,2\7\27de444ef70365302b60f519e5a28b67ffac9cc9
+Å
+Qapp/src/main/java/com/galaxiescoders/wastetracker/adapters/AdminToolsAdapter.java,3\f\3f7248cd54b13d64a01f21677f8c506cb3014455

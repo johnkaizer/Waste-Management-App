@@ -8,11 +8,13 @@
     android:layout_margin="20dp"
     android:padding="5dp"
     android:layout_height="match_parent">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/dialogBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         android:background="@drawable/white_box"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,10 +49,21 @@
             app:layout_constraintTop_toBottomOf="@+id/forgotText" />
 
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Please Select Constituency"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/idEdTitle"
+            app:layout_constraintTop_toBottomOf="@+id/idEdTitle" />
+
         <Spinner
             android:id="@+id/idCont"
             android:layout_width="0dp"
             android:layout_height="48dp"
+            android:layout_marginTop="2dp"
             android:drawableEnd="@drawable/down_24"
             android:drawablePadding="14dp"
             android:focusable="false"
@@ -60,13 +73,23 @@
             android:textColorHint="@color/gray"
             app:layout_constraintEnd_toEndOf="@+id/idEdTitle"
             app:layout_constraintStart_toStartOf="@+id/idEdTitle"
-            app:layout_constraintTop_toBottomOf="@+id/idEdTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Please Select Ward"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/idCont"
+            app:layout_constraintTop_toBottomOf="@+id/idCont" />
 
         <Spinner
             android:id="@+id/idWardSpinner"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="3dp"
             android:drawableEnd="@drawable/down_24"
             android:drawablePadding="14dp"
             android:focusable="false"
@@ -76,7 +99,8 @@
             android:textColorHint="@color/gray"
             app:layout_constraintEnd_toEndOf="@+id/idCont"
             app:layout_constraintStart_toStartOf="@+id/idCont"
-            app:layout_constraintTop_toBottomOf="@+id/idCont" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
         <Button
             android:id="@+id/cancelButton"
             android:layout_width="0dp"

@@ -12,7 +12,10 @@ import android.graphics.drawable.ColorDrawable;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -29,13 +32,20 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.galaxiescoders.wastetracker.R;
+import com.galaxiescoders.wastetracker.adapters.AdminZonesAdapter;
+import com.galaxiescoders.wastetracker.adapters.UsersManagementAdapter;
 import com.galaxiescoders.wastetracker.databinding.FragmentAdminToolsBinding;
 import com.galaxiescoders.wastetracker.databinding.FragmentZonesAdminBinding;
+import com.galaxiescoders.wastetracker.models.User;
 import com.galaxiescoders.wastetracker.models.Zone;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -43,12 +53,25 @@ import java.util.TimeZone;
 
 public class ZonesAdminFragment extends Fragment {
     private FragmentZonesAdminBinding binding;
+    ZonesAdminFragment zonesAdminFragment;
+    private ArrayList<Zone> zonesList;
+    private DatabaseReference databaseReference;
+    private RecyclerView zonesRec;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentZonesAdminBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        zonesRec = root.findViewById(R.id.zonesRV);
+        zonesRec.setLayoutManager(new LinearLayoutManager(getActivity()));
+        zonesList = new ArrayList<>();
+
+        // Initialize Firebase
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("Zones"); // Replace with your actual Firebase node
+
+        fetchZones();
         binding.addItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,13 +131,19 @@ public class ZonesAdminFragment extends Fragment {
                             Toast.makeText(getContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show();
                             return;
                         }
+
+                        // Create a Zone object with the input values
+                        Zone zone = new Zone(title, constituency, wards,"Unassigned");
+
+                        // Push the Zone object to the "Zones" node in Firebase
                         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Zones");
-                        Zone zone = new Zone();
                         databaseReference.push().setValue(zone);
+                        Toast.makeText(getContext(), "Successfully created a Zone", Toast.LENGTH_SHORT).show();
 
                         dialog.dismiss();
                     }
                 });
+
 
                 dialogView.findViewById(R.id.cancelButton).setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -132,5 +161,32 @@ public class ZonesAdminFragment extends Fragment {
 
 
         return root;
+    }
+    private void fetchZones() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                zonesList.clear(); // Clear existing data
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    // Parse Zone data from Firebase
+                    Zone zone = dataSnapshot.getValue(Zone.class);
+
+                    if (zone != null) {
+                        zonesList.add(zone); // Add Zone to the list
+                    }
+                }
+
+                // Create and set the adapter for the RecyclerView
+                AdminZonesAdapter zoneAdapter = new AdminZonesAdapter(zonesList);
+                zonesRec.setAdapter(zoneAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle the error
+                Toast.makeText(getContext(), "Failed to fetch zones from Firebase", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

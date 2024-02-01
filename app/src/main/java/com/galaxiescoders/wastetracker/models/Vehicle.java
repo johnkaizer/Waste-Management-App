@@ -4,7 +4,6 @@ public class Vehicle {
     String ImageUrl;
     String regNum;
     String engineNum;
-    String YOS;
     String YOM;
     String Model;
     String status;
@@ -13,11 +12,10 @@ public class Vehicle {
     public Vehicle() {
     }
 
-    public Vehicle(String imageUrl, String regNum, String engineNum, String YOS, String YOM, String model, String status, String staffId) {
+    public Vehicle(String imageUrl, String regNum, String engineNum, String YOM, String model, String status, String staffId) {
         ImageUrl = imageUrl;
         this.regNum = regNum;
         this.engineNum = engineNum;
-        this.YOS = YOS;
         this.YOM = YOM;
         Model = model;
         this.status = status;
@@ -47,15 +45,6 @@ public class Vehicle {
     public void setEngineNum(String engineNum) {
         this.engineNum = engineNum;
     }
-
-    public String getYOS() {
-        return YOS;
-    }
-
-    public void setYOS(String YOS) {
-        this.YOS = YOS;
-    }
-
     public String getYOM() {
         return YOM;
     }
