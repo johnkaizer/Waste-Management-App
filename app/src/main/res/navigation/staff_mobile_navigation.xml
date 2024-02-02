@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/staff_mobile_navigation"
+    app:startDestination="@+id/staff_home">
+    <fragment
+        android:id="@+id/staff_home"
+        android:name="com.galaxiescoders.wastetracker.ui.StaffHomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_staff_home" />
+    <fragment
+        android:id="@+id/tools_staff"
+        android:name="com.galaxiescoders.wastetracker.ui.StaffToolsFragment"
+        android:label="My Tools"
+        tools:layout="@layout/fragment_staff_tools" />
+    <fragment
+        android:id="@+id/zones_staff"
+        android:name="com.galaxiescoders.wastetracker.ui.StaffZoneFragment"
+        android:label="My Zones"
+        tools:layout="@layout/fragment_staff_zone" />
+</navigation>

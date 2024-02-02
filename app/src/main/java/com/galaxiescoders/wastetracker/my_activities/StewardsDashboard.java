@@ -35,15 +35,12 @@ public class StewardsDashboard extends AppCompatActivity {
         preferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
         editor = preferences.edit();
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                R.id.staff_home, R.id.tools_staff, R.id.zones_staff)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main1);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+        NavigationUI.setupWithNavController(binding.navView1, navController);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

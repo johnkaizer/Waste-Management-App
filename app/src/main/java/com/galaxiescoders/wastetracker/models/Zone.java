@@ -5,15 +5,17 @@ public class Zone {
     String constituency;
     String wards;
     String status;
+    String staffId;
 
     public Zone() {
     }
 
-    public Zone(String title, String constituency, String wards, String status) {
+    public Zone(String title, String constituency, String wards, String status, String staffId) {
         this.title = title;
         this.constituency = constituency;
         this.wards = wards;
         this.status = status;
+        this.staffId = staffId;
     }
 
     public String getTitle() {
@@ -46,5 +48,13 @@ public class Zone {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(String staffId) {
+        this.staffId = staffId;
     }
 }

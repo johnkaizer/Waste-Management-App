@@ -53,7 +53,6 @@ import java.util.TimeZone;
 
 public class ZonesAdminFragment extends Fragment {
     private FragmentZonesAdminBinding binding;
-    ZonesAdminFragment zonesAdminFragment;
     private ArrayList<Zone> zonesList;
     private DatabaseReference databaseReference;
     private RecyclerView zonesRec;
@@ -133,7 +132,7 @@ public class ZonesAdminFragment extends Fragment {
                         }
 
                         // Create a Zone object with the input values
-                        Zone zone = new Zone(title, constituency, wards,"Unassigned");
+                        Zone zone = new Zone(title, constituency, wards,"Unassigned","none");
 
                         // Push the Zone object to the "Zones" node in Firebase
                         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Zones");
