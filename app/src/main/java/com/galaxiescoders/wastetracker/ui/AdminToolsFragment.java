@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.galaxiescoders.wastetracker.R;
 import com.galaxiescoders.wastetracker.adapters.AdminToolsAdapter;
 import com.galaxiescoders.wastetracker.adapters.AdminZonesAdapter;
@@ -49,7 +50,7 @@ public class AdminToolsFragment extends Fragment {
 
     Uri imageUri;
     boolean isImageAdded = false;
-    ImageView imageView;
+    private ImageView imageView;
     private ArrayList<Vehicle> vehiclesList;
     private DatabaseReference databaseReference;
     private RecyclerView vehiclesRec;
@@ -59,10 +60,10 @@ public class AdminToolsFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentAdminToolsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        imageView = root.findViewById(R.id.imageV);
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Uploading image...");
         progressDialog.setCancelable(false);
-        imageView =root.findViewById(R.id.imageV);
         vehiclesRec = root.findViewById(R.id.toolsRV);
         vehiclesRec.setLayoutManager(new LinearLayoutManager(getActivity()));
         vehiclesList = new ArrayList<>();
@@ -72,13 +73,13 @@ public class AdminToolsFragment extends Fragment {
         databaseReference = database.getReference("Tools"); // Replace with your actual Firebase node
 
         fetchTools();
-
         binding.addItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 View dialogView = getLayoutInflater().inflate(R.layout.add_tools, null);
-                ImageView imageView = dialogView.findViewById(R.id.imageV);
+
+                // Remove the local variable here
                 EditText regNumber = dialogView.findViewById(R.id.prod_title);
                 EditText engNumber = dialogView.findViewById(R.id.price);
                 EditText manufacture = dialogView.findViewById(R.id.quantity);
@@ -86,16 +87,6 @@ public class AdminToolsFragment extends Fragment {
 
                 builder.setView(dialogView);
                 AlertDialog dialog = builder.create();
-
-                dialogView.findViewById(R.id.car_btn).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent();
-                        intent.setType("image/*");
-                        intent.setAction(Intent.ACTION_GET_CONTENT);
-                        startActivityForResult(intent, REQUEST_CODE_IMAGE);
-                    }
-                });
 
                 dialogView.findViewById(R.id.submit_btn).setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -111,15 +102,21 @@ public class AdminToolsFragment extends Fragment {
                             return;
                         }
 
-                        // Check if an image is selected
-                        if (!isImageAdded) {
-                            Toast.makeText(getContext(), "Please select an image", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
+                        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Tools");
+                        Vehicle vehicle = new Vehicle(regNum, engineNum, YOM, Model, "Unassigned", " ");
+                        databaseReference.child(Model).setValue(vehicle);
 
-                        // Perform image upload to Firebase Storage
-                        uploadImageToFirebase(regNum, engineNum, YOM, Model);
-                        progressDialog.show();
+                        Toast.makeText(getContext(), "Data saved to Firebase", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+
+                        // Clear the fields in your dialog
+                        regNumber.getText().clear();
+                        engNumber.getText().clear();
+                        manufacture.getText().clear();
+                        model.getText().clear();
+
+                        // Dismiss the dialog
+                        dialog.dismiss();
                     }
                 });
 
@@ -132,48 +129,7 @@ public class AdminToolsFragment extends Fragment {
 
         return root;
     }
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == REQUEST_CODE_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            imageUri = data.getData();
-            isImageAdded = true;
-            imageView.setImageURI(imageUri);
-        }
-    }
-
-    private void uploadImageToFirebase(String regNum, String engineNum, String YOM, String Model) {
-        if (imageUri != null) {
-            StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("tools_images/" + System.currentTimeMillis() + ".jpg");
-            storageReference.putFile(imageUri)
-                    .addOnSuccessListener(taskSnapshot -> {
-                        progressDialog.dismiss();
-                        storageReference.getDownloadUrl().addOnSuccessListener(uri -> {
-                            // Handle the download URL (uri) and other details here
-                            String imageUrl = uri.toString();
-
-                            // Now you can save the imageUrl along with other details to Firebase Database
-                            saveDataToFirebase(regNum, engineNum, YOM, Model, imageUrl);
-                        });
-                    })
-                    .addOnFailureListener(e -> {
-                        progressDialog.dismiss();
-                        Toast.makeText(getContext(), "Failed to upload image", Toast.LENGTH_SHORT).show();
-                    });
-        } else {
-            progressDialog.dismiss();
-            Toast.makeText(getContext(), "Image not selected", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void saveDataToFirebase(String regNum, String engineNum, String YOM, String Model, String imageUrl) {
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Tools");
-        Vehicle  vehicle = new Vehicle(regNum, engineNum, YOM, Model, imageUrl,"Unassigned","none");
-        databaseReference.push().setValue(vehicle);
-
-        Toast.makeText(getContext(), "Data saved to Firebase", Toast.LENGTH_SHORT).show();
-    }
     private void fetchTools() {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -182,7 +138,7 @@ public class AdminToolsFragment extends Fragment {
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     // Parse Vehicle data from Firebase
-                    Vehicle vehicle  = dataSnapshot.getValue(Vehicle.class);
+                    Vehicle vehicle = dataSnapshot.getValue(Vehicle.class);
 
                     if (vehicle != null) {
                         vehiclesList.add(vehicle); // Add vehicle to the list
@@ -190,7 +146,7 @@ public class AdminToolsFragment extends Fragment {
                 }
 
                 // Create and set the adapter for the RecyclerView
-                AdminToolsAdapter adminToolsAdapter = new AdminToolsAdapter(vehiclesList);
+                AdminToolsAdapter adminToolsAdapter = new AdminToolsAdapter(vehiclesList, getContext());
                 vehiclesRec.setAdapter(adminToolsAdapter);
             }
 

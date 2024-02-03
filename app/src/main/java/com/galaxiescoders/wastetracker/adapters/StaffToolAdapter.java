@@ -37,12 +37,6 @@ public class StaffToolAdapter extends RecyclerView.Adapter<StaffToolAdapter.View
         holder.model.setText(vehicle.getModel());
         holder.reg.setText(vehicle.getRegNum());
         holder.yom.setText(vehicle.getYOM());
-        // Load the image using Picasso
-        String imageUrl = vehicle.getImageUrl();
-        Picasso.get()
-                .load(imageUrl)
-                .placeholder(R.drawable.logo)
-                .into(holder.imageView);
 
     }
 

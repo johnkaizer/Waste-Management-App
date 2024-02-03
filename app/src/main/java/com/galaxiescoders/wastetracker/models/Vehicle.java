@@ -1,7 +1,6 @@
 package com.galaxiescoders.wastetracker.models;
 
 public class Vehicle {
-    String ImageUrl;
     String regNum;
     String engineNum;
     String YOM;
@@ -12,22 +11,13 @@ public class Vehicle {
     public Vehicle() {
     }
 
-    public Vehicle(String imageUrl, String regNum, String engineNum, String YOM, String model, String status, String staffId) {
-        ImageUrl = imageUrl;
+    public Vehicle( String regNum, String engineNum, String YOM, String model, String status, String staffId) {
         this.regNum = regNum;
         this.engineNum = engineNum;
         this.YOM = YOM;
         Model = model;
         this.status = status;
         this.staffId = staffId;
-    }
-
-    public String getImageUrl() {
-        return ImageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        ImageUrl = imageUrl;
     }
 
     public String getRegNum() {

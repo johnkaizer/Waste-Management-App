@@ -1,2 +1,8 @@
 
-]	java:S107"AConstructor has 8 parameters, which is greater than 7 authorized.(¸Û“‚8žÉ­‹Ô1
+†
+java:S4165 "dRemove this useless assignment; "userId" already holds the assigned value along all execution paths.(é¸×Ëþÿÿÿÿ8Ï¶¥÷Ö1
+]	java:S107"AConstructor has 8 parameters, which is greater than 7 authorized.(ìÐØÄ8žÉ­‹Ô1
+P
+java:S1172".Remove this unused method parameter "userUid".(ç¥Ëâÿÿÿÿÿ8ü¶¥÷Ö1
+Q
+java:S1656 "/Remove or correct this useless self-assignment.(é¸×Ëþÿÿÿÿ8‡·¥÷Ö1

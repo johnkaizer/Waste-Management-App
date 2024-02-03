@@ -112,21 +112,22 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
     }
-
     private void retrieveUserRoleAndNavigate() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if (currentUser != null) {
-            // Assuming user roles are stored in the "role" field of the "User" table
             DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("Users");
             userRef.child(currentUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
+                        // Get user details
                         String userRole = dataSnapshot.child("role").getValue(String.class);
+                        String idNo = dataSnapshot.child("idNo").getValue(String.class);
 
-                        // Store user role in SharedPreferences
+                        // Store user role and idNo in SharedPreferences
                         editor.putString("userRole", userRole);
+                        editor.putString("idNo", idNo);
                         editor.apply();
 
                         // Navigate to the respective dashboard based on the user's role
@@ -148,11 +149,12 @@ public class SignInActivity extends AppCompatActivity {
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
                     // Handle errors
-                    Toast.makeText(SignInActivity.this, "Error retrieving user role.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this, "Error retrieving user details.", Toast.LENGTH_SHORT).show();
                 }
             });
         }
     }
+
 
 
     public boolean isInternetConnected() {

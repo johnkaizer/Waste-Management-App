@@ -15,10 +15,7 @@ import android.view.MenuItem;
 
 import com.galaxiescoders.wastetracker.R;
 import com.galaxiescoders.wastetracker.authentication.SignInActivity;
-import com.galaxiescoders.wastetracker.databinding.ActivityAdminDashboardBinding;
-import com.galaxiescoders.wastetracker.databinding.ActivityStewardsDashboardBinding;
 import com.galaxiescoders.wastetracker.databinding.ActivityUsersDashboardBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class UsersDashboard extends AppCompatActivity {
@@ -31,16 +28,17 @@ public class UsersDashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         binding = ActivityUsersDashboardBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         preferences = getSharedPreferences("MyPreferences", MODE_PRIVATE);
         editor = preferences.edit();
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home_users, R.id.navigation_dashboard, R.id.navigation_notifications)
+                R.id.user_home, R.id.user_subscription, R.id.user_payments)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_user);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
+        NavigationUI.setupWithNavController(binding.navView2, navController);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -56,4 +56,19 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.13.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.13.0")
     implementation ("com.orhanobut:dialogplus:1.11@aar")
+    //M-pesa
+    implementation ("com.jakewharton.timber:timber:4.7.1")
+
+    implementation ("cn.pedant.sweetalert:library:1.3")
+
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    implementation ("com.squareup.okhttp3:okhttp:3.14.9")
+    implementation ("com.squareup.okhttp3:logging-interceptor:3.12.0")
+
+    implementation ("com.google.code.gson:gson:2.10")
+    implementation ("com.squareup.okio:okio:2.1.0")
+
+    implementation ("com.orhanobut:dialogplus:1.11@aar")
 }

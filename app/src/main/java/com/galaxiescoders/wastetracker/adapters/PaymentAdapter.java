@@ -15,11 +15,9 @@ import com.galaxiescoders.wastetracker.models.Payment;
 import java.util.ArrayList;
 
 public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.ViewHolder> {
-    Context context;
     ArrayList<Payment>list;
 
-    public PaymentAdapter(Context context, ArrayList<Payment> list) {
-        this.context = context;
+    public PaymentAdapter(ArrayList<Payment> list) {
         this.list = list;
     }
 
@@ -33,7 +31,7 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull PaymentAdapter.ViewHolder holder, int position) {
         Payment payment = list.get(position);
-        holder.transaction.setText("Status");
+        holder.transaction.setText(payment.getHouseNumber());
         holder.startD.setText(payment.getPaymentDate());
         holder.endD.setText(payment.getExpiryDate());
         holder.title.setText(payment.getPaymentPackage());

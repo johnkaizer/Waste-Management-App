@@ -3,6 +3,7 @@ package com.galaxiescoders.wastetracker.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,6 +35,12 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
         holder.Salary.setText(jobModel.getSalary());
         holder.deadline.setText(jobModel.getDeadline());
         holder.desc.setText(jobModel.getDescription());
+        holder.applybutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 
@@ -47,6 +54,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
         TextView Salary;
         TextView deadline;
         TextView desc;
+        Button applybutton;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -54,6 +62,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
             Salary = itemView.findViewById(R.id.numberTxt);
             deadline = itemView.findViewById(R.id.mantxt);
             desc = itemView.findViewById(R.id.description);
+            applybutton = itemView.findViewById(R.id.applyBtn);
 
         }
     }

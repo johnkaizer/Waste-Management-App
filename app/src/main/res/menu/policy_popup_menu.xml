@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/view_details"
+        android:title="View Details"/>
+    <!-- Add more menu items as needed -->
+</menu>

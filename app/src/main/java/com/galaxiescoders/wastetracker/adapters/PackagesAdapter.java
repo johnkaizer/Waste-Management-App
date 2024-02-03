@@ -1,5 +1,6 @@
 package com.galaxiescoders.wastetracker.adapters;
 
+import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -12,16 +13,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.galaxiescoders.wastetracker.R;
-import com.galaxiescoders.wastetracker.SubscriptionActivity;
+import com.galaxiescoders.wastetracker.my_activities.SubscriptionActivity;
 import com.galaxiescoders.wastetracker.models.Subscription;
 
 import java.util.ArrayList;
 
 public class PackagesAdapter extends RecyclerView.Adapter<PackagesAdapter.ViewHolder> {
     ArrayList<Subscription> list;
+    Context context;
 
-    public PackagesAdapter(ArrayList<Subscription> list) {
+    public PackagesAdapter(Context context, ArrayList<Subscription> list) {
         this.list = list;
+        this.context = context;
     }
 
     @NonNull
@@ -38,20 +41,7 @@ public class PackagesAdapter extends RecyclerView.Adapter<PackagesAdapter.ViewHo
 
         holder.titleTextView.setText(subscriptionPackages.getTitle());
         holder.amountTextView.setText(String.valueOf(subscriptionPackages.getAmount()));
-
-        // Handle description
-        String description = subscriptionPackages.getDescription();
-        String[] descriptionParts = description.split(",");
-
-        // Trim each part to remove leading or trailing whitespaces
-        for (int i = 0; i < descriptionParts.length; i++) {
-            descriptionParts[i] = descriptionParts[i].trim();
-        }
-
-        // Join the array elements with line breaks
-        String formattedDescription = TextUtils.join("\n", descriptionParts);
-
-        holder.descriptionTextView.setText(formattedDescription);
+        holder.descriptionTextView.setText(subscriptionPackages.getDescription());
         holder.getStartedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +49,7 @@ public class PackagesAdapter extends RecyclerView.Adapter<PackagesAdapter.ViewHo
                 if (subscriptionPackages != null) {
                     Intent intent = new Intent(v.getContext(), SubscriptionActivity.class);
                     intent.putExtra("amount", subscriptionPackages.getAmount() );
+                    intent.putExtra("title", subscriptionPackages.getTitle() );
                     v.getContext().startActivity(intent);
                 }
 

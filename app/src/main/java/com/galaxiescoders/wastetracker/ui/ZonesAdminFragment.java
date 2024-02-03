@@ -132,17 +132,17 @@ public class ZonesAdminFragment extends Fragment {
                         }
 
                         // Create a Zone object with the input values
-                        Zone zone = new Zone(title, constituency, wards,"Unassigned","none");
+                        Zone zone = new Zone(title, constituency, wards, "Unassigned", " ");
 
-                        // Push the Zone object to the "Zones" node in Firebase
+                        // Set the value directly using the title as the key
                         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Zones");
-                        databaseReference.push().setValue(zone);
+                        databaseReference.child(title).setValue(zone);
+
                         Toast.makeText(getContext(), "Successfully created a Zone", Toast.LENGTH_SHORT).show();
 
                         dialog.dismiss();
                     }
                 });
-
 
                 dialogView.findViewById(R.id.cancelButton).setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -177,7 +177,7 @@ public class ZonesAdminFragment extends Fragment {
                 }
 
                 // Create and set the adapter for the RecyclerView
-                AdminZonesAdapter zoneAdapter = new AdminZonesAdapter(zonesList);
+                AdminZonesAdapter zoneAdapter = new AdminZonesAdapter(zonesList, getContext());
                 zonesRec.setAdapter(zoneAdapter);
             }
 

@@ -1,7 +1,7 @@
 package com.galaxiescoders.wastetracker.models;
 
 public class Payment {
-    String userUid;
+    String userId;
     String paymentDate;
     String expiryDate;
     String paymentPackage;
@@ -13,8 +13,8 @@ public class Payment {
     public Payment() {
     }
 
-    public Payment(String userUid, String paymentDate, String expiryDate, String paymentPackage, String paymentAmount, String houseNumber, String userName, String location) {
-        this.userUid = userUid;
+    public Payment(String userId, String paymentDate, String expiryDate, String paymentPackage, String paymentAmount, String houseNumber, String userName, String location) {
+        this.userId = userId;
         this.paymentDate = paymentDate;
         this.expiryDate = expiryDate;
         this.paymentPackage = paymentPackage;
@@ -25,11 +25,11 @@ public class Payment {
     }
 
     public String getUserUid() {
-        return userUid;
+        return userId;
     }
 
     public void setUserUid(String userUid) {
-        this.userUid = userUid;
+        this.userId = userId;
     }
 
     public String getPaymentDate() {
