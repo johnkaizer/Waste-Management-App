@@ -1,9 +1,43 @@
 
-~
-java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "root".(ö±îúÿÿÿÿ8³×Í·Ñ1
-U
-java:S1161":Add the "@Override" annotation above this method signature(î•Éğûÿÿÿÿ
-V
-java:S1128"4Remove this unused import 'android.widget.TextView'.(„Ë‚ˆÿÿÿÿÿ8÷×Í·Ñ1
-c
-java:S1128"ARemove this unused import 'androidx.lifecycle.ViewModelProvider'.(ª´÷©øÿÿÿÿ8÷×Í·Ñ1
+s	java:S117–"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—úşšùÿÿÿÿ8©¯ÂÆØ1
+n	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÊªÁ8©¯ÂÆØ1
+s	java:S117˜"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™¯Æùÿÿÿÿ8ª¯ÂÆØ1
+n	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’°Ô8ª¯ÂÆØ1
+s	java:S117ë"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—úşšùÿÿÿÿ8ª¯ÂÆØ1
+n	java:S117ì"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÊªÁ8ª¯ÂÆØ1
+s	java:S117í"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™¯Æùÿÿÿÿ8ª¯ÂÆØ1
+n	java:S117î"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’°Ô8ª¯ÂÆØ1
+F
+java:S1604‚"(Make this anonymous inner class a lambda(ÌÜİ‚8«¯ÂÆØ1
+J
+java:S1604z"(Make this anonymous inner class a lambda(÷øŞ¯ıÿÿÿÿ8«¯ÂÆØ1
+F
+java:S1604“"(Make this anonymous inner class a lambda(ĞÍÉ¨8¬¯ÂÆØ1
+K
+java:S1604²"(Make this anonymous inner class a lambda(¼ó÷Çøÿÿÿÿ8¬¯ÂÆØ1
+E
+java:S1604k"(Make this anonymous inner class a lambda(Ì Ì¸8¬¯ÂÆØ1
+F
+java:S1604×"(Make this anonymous inner class a lambda(ÌÜİ‚8¬¯ÂÆØ1
+K
+java:S1604Ï"(Make this anonymous inner class a lambda(÷øŞ¯ıÿÿÿÿ8¬¯ÂÆØ1
+F
+java:S1604è"(Make this anonymous inner class a lambda(ĞÍÉ¨8¬¯ÂÆØ1
+K
+java:S1604‡"(Make this anonymous inner class a lambda(¼ó÷Çøÿÿÿÿ8­¯ÂÆØ1
+K
+java:S1604À"(Make this anonymous inner class a lambda(«â’§ÿÿÿÿÿ8ŠÓÃÆØ1
+X
+java:S1874-"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ8ê°ÂÆØ1
+t
+java:S37765"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(î•Éğûÿÿÿÿ8ë°ÂÆØ1
+\
+java:S11615":Add the "@Override" annotation above this method signature(î•Éğûÿÿÿÿ8ì°ÂÆØ1
+X
+java:S1874:"6Remove this use of "ProgressDialog"; it is deprecated.(õ¹´ıüÿÿÿÿ8ò°ÂÆØ1
+T
+java:S1874;"2Remove this use of "setMessage"; it is deprecated.(ÁÜ£åşÿÿÿÿ8ò°ÂÆØ1
+h
+java:S1117¡"ERename "databaseReference" which hides the field declared at line 48.(¾êŠ¹şÿÿÿÿ8±ÂÆØ1
+h
+java:S1117ö"ERename "databaseReference" which hides the field declared at line 48.(¶­ ±şÿÿÿÿ8¤±ÂÆØ1

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.galaxiescoders.wastetracker.R;
 import com.galaxiescoders.wastetracker.models.ApplicationModel;
-import com.galaxiescoders.wastetracker.models.JobModel;
+import com.galaxiescoders.wastetracker.models.TenderModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,28 +30,28 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
-    List<JobModel>list;
+public class TenderAdapter extends RecyclerView.Adapter<TenderAdapter.ViewHolder> {
+    List<TenderModel>list;
     Context context;
 
-    public JobAdapter(List<JobModel> list, Context context) {
+    public TenderAdapter(List<TenderModel> list, Context context) {
         this.list = list;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public JobAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.job_item, parent, false));
+    public TenderAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.tender_item, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull JobAdapter.ViewHolder holder, int position) {
-        JobModel jobModel  = list.get(position);
-        holder.titleTxt.setText(jobModel.getTitle());
-        holder.Salary.setText(jobModel.getSalary());
-        holder.deadline.setText(jobModel.getDeadline());
-        holder.desc.setText(jobModel.getDescription());
+    public void onBindViewHolder(@NonNull TenderAdapter.ViewHolder holder, int position) {
+        TenderModel tenderModel  = list.get(position);
+        holder.titleTxt.setText(tenderModel.getTitle());
+        holder.Salary.setText(tenderModel.getAmount());
+        holder.deadline.setText(tenderModel.getDeadline());
+        holder.desc.setText(tenderModel.getDescription());
         holder.applybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,26 +67,26 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
                 if (currentUser != null) {
                     // User is logged in, retrieve their display name
                     String loggedInUserName = currentUser.getDisplayName();
-                        // Display name is available, check if the user has already applied for this job
-                        DatabaseReference applicationsRef = FirebaseDatabase.getInstance().getReference().child("Applications").child(jobModel.getTitle());
-                        applicationsRef.orderByChild("idNo").equalTo(idNo).addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                if (snapshot.exists()) {
-                                    // User has already applied for this job
-                                    Toast.makeText(view.getContext(), "You have already applied for this job", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    // User has not applied for this job yet, proceed to save the application
-                                    saveApplication(idNo, loggedInUserName);
-                                }
+                    // Display name is available, check if the user has already applied for this job
+                    DatabaseReference applicationsRef = FirebaseDatabase.getInstance().getReference().child("Applications").child(tenderModel.getTitle());
+                    applicationsRef.orderByChild("idNo").equalTo(idNo).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.exists()) {
+                                // User has already applied for this job
+                                Toast.makeText(view.getContext(), "You have already applied for this job", Toast.LENGTH_SHORT).show();
+                            } else {
+                                // User has not applied for this job yet, proceed to save the application
+                                saveApplication(idNo, loggedInUserName);
                             }
+                        }
 
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-                                // Handle database read error
-                                Toast.makeText(view.getContext(), "Failed to check existing applications", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            // Handle database read error
+                            Toast.makeText(view.getContext(), "Failed to check existing applications", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 } else {
                     // No user is currently logged in, you may handle this case accordingly
                     Toast.makeText(view.getContext(), "No user is logged in", Toast.LENGTH_SHORT).show();
@@ -95,7 +95,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
 
             private void saveApplication(String idNo, String loggedInUserName) {
                 // Retrieve job title
-                String jobTitle = jobModel.getTitle();
+                String jobTitle = tenderModel.getTitle();
 
                 // Get today's date
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
@@ -123,9 +123,6 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
                         });
             }
         });
-
-
-
 
     }
 

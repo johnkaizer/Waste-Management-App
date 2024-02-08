@@ -14,11 +14,15 @@ import android.widget.Toast;
 
 import com.galaxiescoders.wastetracker.R;
 import com.galaxiescoders.wastetracker.adapters.JobAdapter;
+import com.galaxiescoders.wastetracker.adapters.JobAdminAdapter;
 import com.galaxiescoders.wastetracker.adapters.PolicyAdapter;
+import com.galaxiescoders.wastetracker.adapters.TenderAdapter;
+import com.galaxiescoders.wastetracker.adapters.TenderAdminAdapter;
 import com.galaxiescoders.wastetracker.databinding.FragmentStaffHomeBinding;
 import com.galaxiescoders.wastetracker.databinding.FragmentUsersHomeBinding;
 import com.galaxiescoders.wastetracker.models.JobModel;
 import com.galaxiescoders.wastetracker.models.PolicyModel;
+import com.galaxiescoders.wastetracker.models.TenderModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,21 +39,43 @@ public class UsersHomeFragment extends Fragment {
     private FragmentUsersHomeBinding binding;
     PolicyAdapter policyAdapter;
     private ArrayList<PolicyModel> policyList;
-    private DatabaseReference databaseReference;
     private RecyclerView policyRec;
-    JobAdapter jobAdapter;
-    private ArrayList<JobModel> list;
-    private RecyclerView jobRec;
+    private ArrayList<TenderModel> tenderList;
+    private ArrayList<JobModel> jobList;
+    private DatabaseReference databaseReference;
+    private DatabaseReference databaseReference1;
+    private RecyclerView tendersRec;
+    private RecyclerView jobsRec;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentUsersHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        jobRec = root.findViewById(R.id.jobsRv);
-        jobRec.setLayoutManager(new LinearLayoutManager(getActivity()));
-        list = new ArrayList<>();
+        // Display Jobs RecyclerView horizontally
+        jobsRec = root.findViewById(R.id.jobsRv);
+        LinearLayoutManager jobsLayoutManager = new LinearLayoutManager(getActivity());
+        jobsLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL); // Set horizontal orientation
+        jobsRec.setLayoutManager(jobsLayoutManager);
+        jobList = new ArrayList<>();
 
+// Initialize Firebase for Jobs
+        FirebaseDatabase jobDatabase = FirebaseDatabase.getInstance();
+        databaseReference = jobDatabase.getReference("Jobs");
+
+// Display Tenders RecyclerView horizontally
+        tendersRec = root.findViewById(R.id.tenderRv);
+        LinearLayoutManager tendersLayoutManager = new LinearLayoutManager(getActivity());
+        tendersLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL); // Set horizontal orientation
+        tendersRec.setLayoutManager(tendersLayoutManager);
+        tenderList = new ArrayList<>();
+
+// Initialize Firebase for Tenders
+        FirebaseDatabase tenderDatabase = FirebaseDatabase.getInstance();
+        databaseReference1 = tenderDatabase.getReference("Tenders");
+
+        fetchTenders();
+        fetchJobs();
         // Initialize Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Jobs");
@@ -95,22 +121,54 @@ public class UsersHomeFragment extends Fragment {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                list.clear(); // Clear existing data
+                jobList.clear(); // Clear existing data
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    JobModel job = dataSnapshot.getValue(JobModel.class);
-                    list.add(job);
+                    // Parse vacancies data from Firebase
+                    JobModel jobModel = dataSnapshot.getValue(JobModel.class);
+
+                    if (jobModel != null) {
+                        jobList.add(jobModel); // Add vacancies to the list
+                    }
                 }
 
-                // Initialize and set adapter
-                jobAdapter = new JobAdapter(list);
-                jobRec.setAdapter(jobAdapter);
+                // Create and set the adapter for the RecyclerView
+                JobAdapter jobAdapter = new JobAdapter(jobList, getContext());
+                jobsRec.setAdapter(jobAdapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                // Handle errors here
-                Toast.makeText(getActivity(), "Error fetching jobs: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                // Handle the error
+                Toast.makeText(getContext(), "Failed to fetch vacancies from Firebase", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void fetchTenders() {
+        databaseReference1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                tenderList.clear(); // Clear existing data
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    // Parse tenders data from Firebase
+                    TenderModel tender = dataSnapshot.getValue(TenderModel.class);
+
+                    if (tender != null) {
+                        tenderList.add(tender); // Add tenders to the list
+                    }
+                }
+
+                // Create and set the adapter for the RecyclerView
+                TenderAdapter tender = new TenderAdapter(tenderList, getContext());
+                tendersRec.setAdapter(tender);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle the error
+                Toast.makeText(getContext(), "Failed to fetch tenders from Firebase", Toast.LENGTH_SHORT).show();
             }
         });
     }
