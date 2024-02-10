@@ -16,17 +16,6 @@
         android:name="com.galaxiescoders.wastetracker.ui.DashboardFragment"
         android:label="Manage Users"
         tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.galaxiescoders.wastetracker.ui.UsersPaymentsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
-    <fragment
-        android:id="@+id/navigation_home_users"
-        android:name="com.galaxiescoders.wastetracker.ui.UsersHomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_users_home" />
     <fragment
         android:id="@+id/navigation_tools"
         android:name="com.galaxiescoders.wastetracker.ui.AdminToolsFragment"
@@ -38,18 +27,8 @@
         android:label="Manage Zones"
         tools:layout="@layout/fragment_zones_admin" />
     <fragment
-        android:id="@+id/staff_home"
-        android:name="com.galaxiescoders.wastetracker.ui.StaffHomeFragment"
-        android:label="Home"
-        tools:layout="@layout/fragment_staff_home" />
-    <fragment
-        android:id="@+id/tools_staff"
-        android:name="com.galaxiescoders.wastetracker.ui.StaffToolsFragment"
-        android:label="My Tools"
-        tools:layout="@layout/fragment_staff_tools" />
-    <fragment
-        android:id="@+id/zones_staff"
-        android:name="com.galaxiescoders.wastetracker.ui.StaffZoneFragment"
-        android:label="My Zones"
-        tools:layout="@layout/fragment_staff_zone" />
+        android:id="@+id/admin_applications"
+        android:name="com.galaxiescoders.wastetracker.AdminApplicationsFragment"
+        android:label="Manage Application"
+        tools:layout="@layout/fragment_admin_applications" />
 </navigation>

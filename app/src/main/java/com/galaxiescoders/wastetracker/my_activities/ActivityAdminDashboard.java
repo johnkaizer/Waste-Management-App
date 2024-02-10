@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.galaxiescoders.wastetracker.AdminApplicationsFragment;
 import com.galaxiescoders.wastetracker.R;
 import com.galaxiescoders.wastetracker.authentication.SignInActivity;
 import com.galaxiescoders.wastetracker.databinding.ActivityAdminDashboardBinding;
@@ -15,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -36,7 +38,7 @@ public class ActivityAdminDashboard extends AppCompatActivity {
         editor = preferences.edit();
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard,  R.id.navigation_tools, R.id.admin_zones)
+                R.id.navigation_home, R.id.navigation_dashboard,  R.id.navigation_tools, R.id.admin_zones ,R.id.admin_applications)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -63,5 +65,6 @@ public class ActivityAdminDashboard extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
 }

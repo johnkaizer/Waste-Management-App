@@ -19,5 +19,9 @@
         android:id="@+id/admin_zones"
         android:icon="@drawable/zone"
         android:title="Manage Zones" />
+    <item
+        android:id="@+id/admin_applications"
+        android:icon="@drawable/application"
+        android:title="Manage Applications" />
 
 </menu>

@@ -744,8 +744,6 @@ Napp/src/main/java/com/galaxiescoders/wastetracker/Interceptor/AccessToken.java
 Rapp/src/main/java/com/galaxiescoders/wastetracker/MpesaDaraja/AuthInterceptor.java,a\3\a3b81e771965834addff010b58534bd4c18dfd71
 z
 Japp/src/main/java/com/galaxiescoders/wastetracker/MpesaDaraja/STKPush.java,0\3\03b63cbe71ffc96bbf59fe280c7904ec234da4a0
-t
-Dapp/src/main/java/com/galaxiescoders/wastetracker/models/Tender.java,b\a\ba7b45652b24d03cb5ce07522f1ebc023171c40f
 y
 Iapp/src/main/java/com/galaxiescoders/wastetracker/models/TenderModel.java,e\e\ee6795f55983a8ef5978340ce2546def46581d50
 }
@@ -758,3 +756,5 @@ Oapp/src/main/java/com/galaxiescoders/wastetracker/adapters/JobAdminAdapter.java
 Papp/src/main/java/com/galaxiescoders/wastetracker/AdminApplicationsFragment.java,5\7\57956d47f0e9427e9955a97886f0b8b35eb03917
 ~
 Napp/src/main/java/com/galaxiescoders/wastetracker/models/ApplicationModel.java,a\b\ab305b6b1a34f8431fb3fc2f38067aa7ee98e3f1
+‚
+Rapp/src/main/java/com/galaxiescoders/wastetracker/adapters/ApplicationAdapter.java,5\2\52eb4d2c0f0cf7fd4008be39f6011fd083662b39

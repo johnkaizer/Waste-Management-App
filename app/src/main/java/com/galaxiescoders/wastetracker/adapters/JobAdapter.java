@@ -115,7 +115,7 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.ViewHolder> {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(context, "Application submitted successfully", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(context, "Application submitted successfully, You will receive communication in due time", Toast.LENGTH_SHORT).show();
                                 } else {
                                     Toast.makeText(context, "Failed to submit application", Toast.LENGTH_SHORT).show();
                                 }
