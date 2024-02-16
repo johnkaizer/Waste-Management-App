@@ -1,0 +1,9 @@
+
+x
+java:S1450"VRemove the "binding" field and declare it as a local variable in the relevant methods.(†ÃîÕıÿÿÿÿ8—‰ŸíÖ1
+r
+java:S1450"URemove the "subRec" field and declare it as a local variable in the relevant methods.(Ÿé‚º8˜‰ŸíÖ1
+~
+java:S1450"\Remove the "subscriptions" field and declare it as a local variable in the relevant methods.(¹“ûúıÿÿÿÿ8˜‰ŸíÖ1
+c
+java:S1117/"ARename "subscriptions" which hides the field declared at line 28.(İÉõïøÿÿÿÿ8À‰ŸíÖ1

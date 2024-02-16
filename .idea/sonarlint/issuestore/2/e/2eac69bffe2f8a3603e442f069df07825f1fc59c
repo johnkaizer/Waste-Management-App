@@ -1,0 +1,21 @@
+
+r	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ı´˜Îüÿÿÿÿ8±µÏıÖ1
+l	java:S117a"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç×ów8²µÏıÖ1
+J
+java:S1604["(Make this anonymous inner class a lambda(Îì©ûÿÿÿÿ8²µÏıÖ1
+E
+java:S1604L"(Make this anonymous inner class a lambda(·´À8³µÏıÖ1
+s
+java:S1450/"VRemove the "binding" field and declare it as a local variable in the relevant methods.(Å–à­8å¶ÏıÖ1
+u
+java:S14505"XRemove the "imageView" field and declare it as a local variable in the relevant methods.(øû¯8å¶ÏıÖ1
+X
+java:S18741"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ8ú¶ÏıÖ1
+X
+java:S1874@"6Remove this use of "ProgressDialog"; it is deprecated.(õ¹´ıüÿÿÿÿ8…·ÏıÖ1
+O
+java:S1874A"2Remove this use of "setMessage"; it is deprecated.(«‘Ïö8…·ÏıÖ1
+b
+java:S1117i"ERename "databaseReference" which hides the field declared at line 55.(¾àâú8ïÑëıÖ1
+J
+java:S10685"-Remove this unused "imageView" private field.(øû¯8Ÿ·ÏıÖ1

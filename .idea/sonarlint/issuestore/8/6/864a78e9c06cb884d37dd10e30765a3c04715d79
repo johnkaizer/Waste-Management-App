@@ -1,0 +1,18 @@
+
+m	java:S117f"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“ïİ®8İîĞ×1
+E
+java:S1604S"(Make this anonymous inner class a lambda(Ü¸8İîĞ×1
+K
+java:S1604Ê"(Make this anonymous inner class a lambda(Ïë£ùÿÿÿÿ8İîĞ×1
+K
+java:S1604Õ"(Make this anonymous inner class a lambda(Ÿ ¹ÿÿÿÿÿ8İîĞ×1
+X
+java:S18744"6Remove this use of "ProgressDialog"; it is deprecated.(¥Ç›“ıÿÿÿÿ8ÏïĞ×1
+S
+java:S1874C"6Remove this use of "ProgressDialog"; it is deprecated.(‘õ—™8ÓïĞ×1
+T
+java:S1874u"2Remove this use of "setMessage"; it is deprecated.(çöíÖşÿÿÿÿ8ŞïĞ×1
+U
+java:S1874w"8Remove this use of "setIndeterminate"; it is deprecated.(ŸƒÄÔ8ŞïĞ×1
+Ÿ
+java:S1186¯"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Äà‡†8ìïĞ×1
