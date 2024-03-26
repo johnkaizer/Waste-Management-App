@@ -31,10 +31,6 @@ X
 java:S1874-"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ8ê°ÂÆØ1
 t
 java:S37765"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(î•Éðûÿÿÿÿ8ë°ÂÆØ1
-\
-java:S11615":Add the "@Override" annotation above this method signature(î•Éðûÿÿÿÿ8ì°ÂÆØ1
-X
-java:S1874:"6Remove this use of "ProgressDialog"; it is deprecated.(õ¹´ýüÿÿÿÿ8ò°ÂÆØ1
 T
 java:S1874;"2Remove this use of "setMessage"; it is deprecated.(ÁÜ£åþÿÿÿÿ8ò°ÂÆØ1
 h

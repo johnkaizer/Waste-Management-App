@@ -10,6 +10,8 @@ import com.galaxiescoders.wastetracker.AdminApplicationsFragment;
 import com.galaxiescoders.wastetracker.R;
 import com.galaxiescoders.wastetracker.authentication.SignInActivity;
 import com.galaxiescoders.wastetracker.databinding.ActivityAdminDashboardBinding;
+import com.galaxiescoders.wastetracker.ui.AdminComplaintsFragment;
+import com.galaxiescoders.wastetracker.ui.UserComplaintFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -46,7 +48,7 @@ public class ActivityAdminDashboard extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.admin_menu, menu);
         return true;
     }
 
@@ -60,6 +62,13 @@ public class ActivityAdminDashboard extends AppCompatActivity {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(ActivityAdminDashboard.this, SignInActivity.class));
             finish();
+            return true;
+        } else if (id == R.id.action_complaint) {
+            // Open ComplaintFragment
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.nav_host_fragment_activity_main, new AdminComplaintsFragment())
+                    .addToBackStack(null)
+                    .commit();
             return true;
         }
 

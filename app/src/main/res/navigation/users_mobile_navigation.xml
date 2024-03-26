@@ -20,5 +20,10 @@
         android:name="com.galaxiescoders.wastetracker.ui.NotificationsFragment"
         android:label="Payments"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/user_complaints"
+        android:name="com.galaxiescoders.wastetracker.ui.UserComplaintFragment"
+        android:label="Report Complaints"
+        tools:layout="@layout/fragment_user_complaint" />
 
 </navigation>

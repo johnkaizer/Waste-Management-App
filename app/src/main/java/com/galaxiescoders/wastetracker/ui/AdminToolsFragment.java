@@ -45,12 +45,7 @@ import java.util.ArrayList;
 
 public class AdminToolsFragment extends Fragment {
     private FragmentAdminToolsBinding binding;
-    public static final int REQUEST_CODE_IMAGE = 101;
     private ProgressDialog progressDialog;
-
-    Uri imageUri;
-    boolean isImageAdded = false;
-    private ImageView imageView;
     private ArrayList<Vehicle> vehiclesList;
     private DatabaseReference databaseReference;
     private RecyclerView vehiclesRec;
@@ -60,7 +55,6 @@ public class AdminToolsFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentAdminToolsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        imageView = root.findViewById(R.id.imageV);
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Uploading image...");
         progressDialog.setCancelable(false);

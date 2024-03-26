@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    android:layout_margin="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Location Header -->
+        <TextView
+            android:id="@+id/textLocationHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Location Value -->
+        <TextView
+            android:id="@+id/textLocationValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/textLocationHeader"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Date Header -->
+        <TextView
+            android:id="@+id/textDateHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textLocationHeader"
+            android:layout_marginTop="8dp" />
+
+        <!-- Date Value -->
+        <TextView
+            android:id="@+id/textDateValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/textDateHeader"
+            app:layout_constraintTop_toTopOf="@+id/textDateHeader" />
+
+        <!-- Complaint Header -->
+        <TextView
+            android:id="@+id/textComplaintHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complaint:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textDateHeader"
+            android:layout_marginTop="8dp" />
+
+        <!-- Complaint Value -->
+        <TextView
+            android:id="@+id/textComplaintValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/textComplaintHeader"
+            app:layout_constraintTop_toTopOf="@+id/textComplaintHeader" />
+
+        <!-- Phone Header -->
+        <TextView
+            android:id="@+id/textPhoneHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone:"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textComplaintHeader"
+            android:layout_marginTop="8dp" />
+
+        <!-- Phone Value -->
+        <TextView
+            android:id="@+id/textPhoneValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/textPhoneHeader"
+            app:layout_constraintTop_toTopOf="@+id/textPhoneHeader" />
+
+        <Button
+            android:id="@+id/buttonResolve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:text="Resolve"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textPhoneHeader" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

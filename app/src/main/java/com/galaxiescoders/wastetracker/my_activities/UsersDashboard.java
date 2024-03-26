@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import com.galaxiescoders.wastetracker.R;
 import com.galaxiescoders.wastetracker.authentication.SignInActivity;
 import com.galaxiescoders.wastetracker.databinding.ActivityUsersDashboardBinding;
+import com.galaxiescoders.wastetracker.models.User;
+import com.galaxiescoders.wastetracker.ui.UserComplaintFragment;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class UsersDashboard extends AppCompatActivity {
@@ -34,7 +36,7 @@ public class UsersDashboard extends AppCompatActivity {
         editor = preferences.edit();
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.user_home, R.id.user_subscription, R.id.user_payments)
+                R.id.user_home, R.id.user_subscription, R.id.user_payments, R.id.user_complaints)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_user);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -42,7 +44,7 @@ public class UsersDashboard extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.user_menu, menu);
         return true;
     }
 
@@ -57,8 +59,16 @@ public class UsersDashboard extends AppCompatActivity {
             startActivity(new Intent(UsersDashboard.this, SignInActivity.class));
             finish();
             return true;
+        } else if (id == R.id.action_complaint) {
+            // Open ComplaintFragment
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.nav_host_fragment_activity_user, new UserComplaintFragment())
+                    .addToBackStack(null)
+                    .commit();
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 }

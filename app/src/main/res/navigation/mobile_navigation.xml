@@ -31,4 +31,9 @@
         android:name="com.galaxiescoders.wastetracker.AdminApplicationsFragment"
         android:label="Manage Application"
         tools:layout="@layout/fragment_admin_applications" />
+    <fragment
+        android:id="@+id/admin_complaints"
+        android:name="com.galaxiescoders.wastetracker.ui.AdminComplaintsFragment"
+        android:label="Manage Complaints"
+        tools:layout="@layout/fragment_admin_complaints" />
 </navigation>
