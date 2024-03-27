@@ -9,6 +9,8 @@ s
 java:S1450/"VRemove the "binding" field and declare it as a local variable in the relevant methods.(Å–à­8å¶ÏýÖ1
 X
 java:S18740"6Remove this use of "ProgressDialog"; it is deprecated.(·á…Çùÿÿÿÿ8íŽòªÜ1
+X
+java:S1874:"6Remove this use of "ProgressDialog"; it is deprecated.(õ¹´ýüÿÿÿÿ8âœ‚‹è1
 O
 java:S1874;"2Remove this use of "setMessage"; it is deprecated.(«‘Ïö8…·ÏýÖ1
 b

@@ -23,5 +23,4 @@
         android:id="@+id/admin_applications"
         android:icon="@drawable/application"
         android:title="Manage Applications" />
-
 </menu>

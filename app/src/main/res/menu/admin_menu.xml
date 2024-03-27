@@ -7,6 +7,11 @@
         android:title="Report"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_payment"
+        android:orderInCategory="100"
+        android:title="Users Payments"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_sign_out"
         android:orderInCategory="100"
         android:title="Sign Out"

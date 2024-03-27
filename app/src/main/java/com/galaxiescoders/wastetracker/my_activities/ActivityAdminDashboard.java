@@ -11,6 +11,7 @@ import com.galaxiescoders.wastetracker.R;
 import com.galaxiescoders.wastetracker.authentication.SignInActivity;
 import com.galaxiescoders.wastetracker.databinding.ActivityAdminDashboardBinding;
 import com.galaxiescoders.wastetracker.ui.AdminComplaintsFragment;
+import com.galaxiescoders.wastetracker.ui.AdminSubscriptionsFragment;
 import com.galaxiescoders.wastetracker.ui.UserComplaintFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,7 +41,7 @@ public class ActivityAdminDashboard extends AppCompatActivity {
         editor = preferences.edit();
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard,  R.id.navigation_tools, R.id.admin_zones ,R.id.admin_applications)
+                R.id.navigation_home, R.id.navigation_dashboard,  R.id.navigation_tools, R.id.admin_zones ,R.id.admin_applications,R.id.admin_subs)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -70,7 +71,13 @@ public class ActivityAdminDashboard extends AppCompatActivity {
                     .addToBackStack(null)
                     .commit();
             return true;
-        }
+        } else if (id == R.id.action_payment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.nav_host_fragment_activity_main, new AdminSubscriptionsFragment())
+                .addToBackStack(null)
+                .commit();
+        return true;
+    }
 
         return super.onOptionsItemSelected(item);
     }

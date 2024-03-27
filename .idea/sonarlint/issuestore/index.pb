@@ -1576,3 +1576,7 @@ Papp/src/main/java/com/galaxiescoders/wastetracker/adapters/ComplaintAdapter.jav
 Qapp/src/main/java/com/galaxiescoders/wastetracker/ui/AdminComplaintsFragment.java,e\1\e1dcd3abed960e4cee70dfe531f9d65053c761e0
 …
 Uapp/src/main/java/com/galaxiescoders/wastetracker/adapters/AdminComplaintAdapter.java,0\6\06357c3445104b6853a2efe8bcc24aa713b2f61a
+„
+Tapp/src/main/java/com/galaxiescoders/wastetracker/ui/AdminSubscriptionsFragment.java,e\3\e307b3b4016eb3b652d8a4fd3cf5a513782c9a08
+ƒ
+Sapp/src/main/java/com/galaxiescoders/wastetracker/adapters/AdminPaymentAdapter.java,5\d\5d61d2f70cae81e89b42db1715b507db8c63ca87
